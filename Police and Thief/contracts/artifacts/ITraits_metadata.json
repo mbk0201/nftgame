@@ -1,0 +1,89 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "seed",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint8",
+						"name": "traitType",
+						"type": "uint8"
+					}
+				],
+				"name": "selectTrait",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ITraits.sol": "ITraits"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ITraits.sol": {
+			"keccak256": "0x33f398d6640efaffa2ebbfc793dcd239d60cd8773c8308078e497beb13e2cc74",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://d9c368060be3107ab1d070a53057a5d8e9a1a0531523fd2cd9aed0391259d0a9",
+				"dweb:/ipfs/QmPttds5ZwJ139ZDKyVnTLFN1o6Sk4CknnJ1VDJgdXgf1G"
+			]
+		}
+	},
+	"version": 1
+}

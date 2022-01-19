@@ -1,0 +1,1223 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract ILOOT",
+						"name": "_loot",
+						"type": "address"
+					},
+					{
+						"internalType": "contract ITraits",
+						"name": "_traits",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_maxTokens",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Paused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Unpaused",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_MINT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_TOKENS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MINT_PRICE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PAID_TOKENS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "bank",
+				"outputs": [
+					{
+						"internalType": "contract IBank",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "changePrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "existingCombinations",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPaidTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTokenTraits",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isThief",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint8",
+								"name": "uniform",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "hair",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "eyes",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "facialHair",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "headgear",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "neckGear",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "accessory",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "alphaIndex",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct IPoliceAndThief.ThiefPolice",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "loot",
+				"outputs": [
+					{
+						"internalType": "contract ILOOT",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "stake",
+						"type": "bool"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "mintCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minted",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "randomSource",
+				"outputs": [
+					{
+						"internalType": "contract ISeed",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_bank",
+						"type": "address"
+					}
+				],
+				"name": "setBank",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_paidTokens",
+						"type": "uint256"
+					}
+				],
+				"name": "setPaidTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_paused",
+						"type": "bool"
+					}
+				],
+				"name": "setPaused",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ISeed",
+						"name": "_seed",
+						"type": "address"
+					}
+				],
+				"name": "setRandomSource",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_staking",
+						"type": "bool"
+					}
+				],
+				"name": "setStakingActive",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ITraits",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "setTraits",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenTraits",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isThief",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint8",
+						"name": "uniform",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "hair",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "eyes",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "facialHair",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "headgear",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "neckGear",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "accessory",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "alphaIndex",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "traits",
+				"outputs": [
+					{
+						"internalType": "contract ITraits",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"approve(address,uint256)": {
+					"details": "See {IERC721-approve}."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC721-balanceOf}."
+				},
+				"getApproved(uint256)": {
+					"details": "See {IERC721-getApproved}."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "See {IERC721-isApprovedForAll}."
+				},
+				"mintCost(uint256)": {
+					"params": {
+						"tokenId": "the ID to check the cost of to mint"
+					},
+					"returns": {
+						"_0": "the cost of the given token ID"
+					}
+				},
+				"name()": {
+					"details": "See {IERC721Metadata-name}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"ownerOf(uint256)": {
+					"details": "See {IERC721-ownerOf}."
+				},
+				"paused()": {
+					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "See {IERC721-setApprovalForAll}."
+				},
+				"setBank(address)": {
+					"params": {
+						"_bank": "the address of the Bank"
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"symbol()": {
+					"details": "See {IERC721Metadata-symbol}."
+				},
+				"tokenByIndex(uint256)": {
+					"details": "See {IERC721Enumerable-tokenByIndex}."
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"details": "See {IERC721Enumerable-tokenOfOwnerByIndex}."
+				},
+				"tokenURI(uint256)": {
+					"details": "See {IERC721Metadata-tokenURI}."
+				},
+				"totalSupply()": {
+					"details": "See {IERC721Enumerable-totalSupply}."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC721-transferFrom}."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "instantiates contract and rarity tables"
+				},
+				"mint(uint256,bool)": {
+					"notice": "mint a token - 90% Thief, 10% Polices The first 20% are free to claim, the remaining cost $LOOT"
+				},
+				"mintCost(uint256)": {
+					"notice": "the first 20% are paid in AVAX the next 20% are 20000 $LOOT the next 40% are 40000 $LOOT the final 20% are 80000 $LOOT"
+				},
+				"setBank(address)": {
+					"notice": "called after deployment so that the contract can get random police thieves"
+				},
+				"setPaidTokens(uint256)": {
+					"notice": "updates the number of tokens for sale"
+				},
+				"setPaused(bool)": {
+					"notice": "enables owner to pause / unpause minting"
+				},
+				"withdraw()": {
+					"notice": "allows owner to withdraw funds from minting"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PoliceAndThief.sol": "PoliceAndThief"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Address.sol": {
+			"keccak256": "0x626b62cca5971be750732929d782b30e1277e36dd6b4ec2a90ddbbb61c650066",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://07c78b7f7894e0444db2c6c4c73e4eddb78beed6bd65cd6089e2e9434bea83b0",
+				"dweb:/ipfs/QmczQU7ihPMBhAmUM9MxnumRWwwvnTiDMDHp3nJSgYXQim"
+			]
+		},
+		"contracts/Bank.sol": {
+			"keccak256": "0xadda64f502e65354f5201fffea2e53084ec65fdbf40040cee64de7c10081ac12",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://cbec6b01dbe6ccb35e1451708a5d8704bf71c7ebe6df6171e731e6a59bc2e952",
+				"dweb:/ipfs/QmQ8bSEYNb8aQgFW3WqVfMZvnxuTAtpHmNbCyqLTJQWVqP"
+			]
+		},
+		"contracts/Context.sol": {
+			"keccak256": "0x851c3d8e30ea37c35947f620812e2e18718ac9312ef8d84b643fc46d94269540",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7c02fec97a236e7eda6646bb8aef30a00f134710ffc29f1965c27dc257cc58a3",
+				"dweb:/ipfs/QmNoqNHYS9HP9u8J3bG5kVztMNcQ42kYiiiKDN8tY94gvY"
+			]
+		},
+		"contracts/ERC165.sol": {
+			"keccak256": "0x6daeb7a509fb10e5e8a52e1f2bbcf749ada25fc50deccfc82cbabeccc2bd644e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a0dc76637b0377f014d6aebdc215e6cdcf6d5d74cca72661db0d72d50eb51ca3",
+				"dweb:/ipfs/QmZM4c66SX6jLACEFJowRxZ7vgPNRD6eNm8kzuof16RZd5"
+			]
+		},
+		"contracts/ERC20.sol": {
+			"keccak256": "0x4625807402f320263addc2e3b2655d70e316a164bbdc1fca06a2424880adbf52",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a6ad854e533a0c6c3262fa596b17c5a5af0d99766b92c4688a7671bab48df38",
+				"dweb:/ipfs/QmPjgA84g8UdPfdjp4FS7ysBujMoTaAHZ24KdxKVoKBhmC"
+			]
+		},
+		"contracts/ERC721.sol": {
+			"keccak256": "0xbac1a57d5e59fdf2a518a4676decaa366465ad2ef618e8d2e9c95b65d6db039a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://437eee4923015547f6071e3d4714a09c0f7f9be89dd9de4526f9c0accfd694c7",
+				"dweb:/ipfs/QmcVacZgwU8LbF3yHxvPdH5zjnxc23X6rb639owz6j17C7"
+			]
+		},
+		"contracts/ERC721Enumerable.sol": {
+			"keccak256": "0x5ccb33ae32093c87951e8aa92e4e2858ea699beb4bbf730db8bf03a30bc3433c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a151b2f8023d10141f80d288d7dfe5677d630a106d009173b0de43ba672aa9c4",
+				"dweb:/ipfs/QmaoxSsFxodqtEbhg5keQu1n6NuonzsAG8WFYnvz1DwkZ3"
+			]
+		},
+		"contracts/IBank.sol": {
+			"keccak256": "0xd016fe8970f95df855a9b62a39a3b615cf350f1c7180626f885da0f56d90270a",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://d73de5d44f85936c3b3f3764e80ea90ea11e03ef8c4442b51309dc58702e36d9",
+				"dweb:/ipfs/QmQ4NvsEgENnA9aEn1P2FNbtfBnopokpkmJiQ3RwZVKYMM"
+			]
+		},
+		"contracts/IERC165.sol": {
+			"keccak256": "0xfc0296945555d45d710d7a0ab5cf09b90541ebbf92685780c70a6607d10e784a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://324027b4c88ab64f9a4cb8837b794a52785c1b1c2f2875773ac5ce69cde442bf",
+				"dweb:/ipfs/QmZDtbDjULZUNtq1z2RGNrBJw5WUtQzPHUFxTQxqzEq3om"
+			]
+		},
+		"contracts/IERC20.sol": {
+			"keccak256": "0xcf55d265592e8b07ff8cad8c4d3db2e9ccca3dbc066cec5b9a6ca10de1624960",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a353382a5d1ee61672e2014b52aafa1c9147c3739119195eadfeb83b69d921f6",
+				"dweb:/ipfs/QmZ2Wx6SgCsANjRHHbyj8vEGwemVGDn1H5vRVuiJpUGCHV"
+			]
+		},
+		"contracts/IERC20Metadata.sol": {
+			"keccak256": "0xeb20903f20a1dfb60fd17c7df4f1af4ccac919e3087b69fafd675e23b65f5b51",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b8aa8f5ce29152488b21020c04fc7236bd3ae81cb73ce17a780996ed59b50e7",
+				"dweb:/ipfs/Qme1vN6zLKPHo6MgGMvpBtpGT1TntjkDzJQoPjR6UgUVxJ"
+			]
+		},
+		"contracts/IERC721.sol": {
+			"keccak256": "0x59dd2375730ee78e7b660698c125c411d10d44f23129734e1cf36c53f57b1831",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e2a5c0c5e204c7629dd8703adce115f17c867b7a529b65941d7dc3c6ba0ad980",
+				"dweb:/ipfs/QmYFMKk6EmrEJqto8XWbzVQ6fSFBjprX5q66YSCEwzJFHc"
+			]
+		},
+		"contracts/IERC721Enumerable.sol": {
+			"keccak256": "0x85be08c5523ff790d42caccb413800d94fe4b21e7f23acc46e0ad1f0c2585e18",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c1c05331dcdefd5d2826abdc7267daad6a265fa7a98adde75497bb8d4e0dd06",
+				"dweb:/ipfs/QmfDzLF2dQGZPvuQ6qxf4L1YbzxDt9hjy8y6dYMQqMAy2y"
+			]
+		},
+		"contracts/IERC721Metadata.sol": {
+			"keccak256": "0x06eb9943bc1829a546404d32c8683c79969f8478da85821f329ac45438e22a7c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://466ca3a46cc822b781554c0318ea53387b4630263cfe118af0a099d60db6002f",
+				"dweb:/ipfs/Qmce4q1af9dPXtM59AnBDZpo2uDhzf6rtQDzACoRmMckqu"
+			]
+		},
+		"contracts/IERC721Receiver.sol": {
+			"keccak256": "0x3e4d35ce1dcd96c3548f417aa39c84be1a55d2d65c106b7f615eac47729777e1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e519cf493d50f5b232877b56cec4770ceb6df22a166cb9ff889f15e7c8f0e38c",
+				"dweb:/ipfs/QmbnJ172RmF2WTFQDsk6vcU28CBXSa1jvERuPW87DwGR1v"
+			]
+		},
+		"contracts/ILOOT.sol": {
+			"keccak256": "0x912c3e64d14ee4664a76e793fc3d32f685c7d9ab55f775331317fc2cc8b40a26",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://0b14070c28b9312e7fa50e14d3d37075ca16428a057675199b751eb8dd6bea74",
+				"dweb:/ipfs/QmTd7bxbHup6GFYj2Kh2Uj16kDVVCT9NAFBNmGhMjeYDd4"
+			]
+		},
+		"contracts/IPoliceAndThief.sol": {
+			"keccak256": "0x440afa587099516686ce6a6d0995575f3362699d72e8bd10bb9e56478c78e4cd",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://13d8f27ff47c4e706ff5f9237b2dd16a2c613fe4228fce65ed7beaed169b1264",
+				"dweb:/ipfs/Qmc37KRFaAoHArLRSTYhZBN94Lfkp8dRhQ5rsnouBAhnkP"
+			]
+		},
+		"contracts/ISeed.sol": {
+			"keccak256": "0x27d08dc1d1fb36a520ee769ebb62ed619d1a4f29857e70071ecf46b29a32c4d0",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://8aff3e507180a93253e088822c24cd94ec900064f0f13c7ec9af8473ad72dbbf",
+				"dweb:/ipfs/QmVius8mTEiQG1fwACSeZDLNzbPKU254vniKXL8euSofpw"
+			]
+		},
+		"contracts/ITraits.sol": {
+			"keccak256": "0x33f398d6640efaffa2ebbfc793dcd239d60cd8773c8308078e497beb13e2cc74",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://d9c368060be3107ab1d070a53057a5d8e9a1a0531523fd2cd9aed0391259d0a9",
+				"dweb:/ipfs/QmPttds5ZwJ139ZDKyVnTLFN1o6Sk4CknnJ1VDJgdXgf1G"
+			]
+		},
+		"contracts/LOOT.sol": {
+			"keccak256": "0xd426cc113b27683f80014d62321b342ac62692570b23b55b873e137226df8525",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://a07a31f53857c12bcf519f7495e8a3865944e008e4c651077d0713ab4ab42c2e",
+				"dweb:/ipfs/QmXSvxS1AgukwQGTgc7c3HF6Az3JeK7aJhZwzgf2kCgAk8"
+			]
+		},
+		"contracts/Ownable.sol": {
+			"keccak256": "0x4983a381cffc3dd788d1599cf5612cfa42e2370e92d2236f77f445e4bef16c30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://47e91de22ee42d06ccf1c9163462a179b4d130bc7777baac36f920a26fc94e3c",
+				"dweb:/ipfs/QmXS5P66GK8vRS2Cof4c3sffybXJUaDT3jTG1ZmhDrXJPy"
+			]
+		},
+		"contracts/Pauseable.sol": {
+			"keccak256": "0x13d3df33773e93b7db24510f3d412e3e2616ae6434b3df91e2f01430d7839a39",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bc1699e0ba3e5d832283cf37ecdee406bed797b0eb1abac05f3de5a9d76603eb",
+				"dweb:/ipfs/QmdbGBHZFJ4HrSd3AQzkhgYozLw2XGLAD3gNgbPNDgsnpe"
+			]
+		},
+		"contracts/PoliceAndThief.sol": {
+			"keccak256": "0x4526daabcc2b5eca25a7f21588e7201bd7a7711e919ecfd8942b303591d13268",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://80f3f4da17b2e626b570ad46a582610fe2a7a8d14745b9d3cb180a958d4fa332",
+				"dweb:/ipfs/QmYVPnSqc2Sv41RuLNqiRqKENXiYG53g8bA9wx6QnU3oHu"
+			]
+		},
+		"contracts/Strings.sol": {
+			"keccak256": "0x680df08ddcc0584a8172db776bffd1753c893c13bcd18b928e22027ae441b000",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://637df747e24b006779e7c945cb0f979c60bbd861bae42254b9814762c0dfba4f",
+				"dweb:/ipfs/QmPChjSFzHTESQsNycgZ7mPG8Xd31hcZKaTN2VLbiAngC9"
+			]
+		}
+	},
+	"version": 1
+}

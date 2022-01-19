@@ -1,0 +1,125 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getPaidTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTokenTraits",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isThief",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint8",
+								"name": "uniform",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "hair",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "eyes",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "facialHair",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "headgear",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "neckGear",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "accessory",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "alphaIndex",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct IPoliceAndThief.ThiefPolice",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IPoliceAndThief.sol": "IPoliceAndThief"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IPoliceAndThief.sol": {
+			"keccak256": "0x440afa587099516686ce6a6d0995575f3362699d72e8bd10bb9e56478c78e4cd",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://13d8f27ff47c4e706ff5f9237b2dd16a2c613fe4228fce65ed7beaed169b1264",
+				"dweb:/ipfs/Qmc37KRFaAoHArLRSTYhZBN94Lfkp8dRhQ5rsnouBAhnkP"
+			]
+		}
+	},
+	"version": 1
+}

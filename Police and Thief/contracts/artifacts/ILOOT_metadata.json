@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ILOOT.sol": "ILOOT"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ILOOT.sol": {
+			"keccak256": "0x912c3e64d14ee4664a76e793fc3d32f685c7d9ab55f775331317fc2cc8b40a26",
+			"license": "MIT LICENSE",
+			"urls": [
+				"bzz-raw://0b14070c28b9312e7fa50e14d3d37075ca16428a057675199b751eb8dd6bea74",
+				"dweb:/ipfs/QmTd7bxbHup6GFYj2Kh2Uj16kDVVCT9NAFBNmGhMjeYDd4"
+			]
+		}
+	},
+	"version": 1
+}
